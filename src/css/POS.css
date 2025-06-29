@@ -1,0 +1,999 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+.navbar {
+  background-color: #f5c16d;
+  color: #871810;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+.navbar li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.navbar a {
+  color: #000;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #ba2a21;
+}
+
+.title {
+  color: #000;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.container {
+  margin: 10px 5px;
+  width: 22%;
+  padding: 10px;
+  color: #fff;
+  font-weight: bolder;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.container.yellow {
+  background-color: #feae00;
+}
+
+.container.green {
+  background-color: #03ba71;
+}
+
+.container.blue {
+  background-color: #0080ff;
+}
+
+.container.red {
+  background-color: #ff1900;
+}
+
+.wrapContainer {
+  display: flex;
+}
+
+.wrapContainer.stand {
+  gap: 20px;
+  width: 96%;
+  background-color: #e9e7e7;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px auto;
+}
+
+.wrapContainer.navbar {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.productContainer {
+  padding: 10px;
+  background-color: #e9e7e7;
+  border: 1px solid #000;
+  border-radius: 10px;
+  max-width: 96%;
+  margin: 10px auto;
+}
+
+.standLeftContainer {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+}
+
+.standRightContainer {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapContainer.spaceBetween {
+  margin-left: 15px;
+  border-radius: 5px;
+  padding: 5px;
+  width: 98%;
+  justify-content: space-between;
+}
+
+.wrapContainer.spaceBetweenReport {
+  border-radius: 5px;
+  padding: 5px;
+  justify-content: space-between;
+}
+
+.wrapContainer.flexEnd {
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.wrapContainer.spaceEvenly {
+  justify-content: space-evenly;
+}
+
+.standSelect {
+  width: 30%;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+  color: #000;
+}
+
+.kategoriSelect {
+  width: 30%;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+  color: #000;
+}
+
+.username {
+  background-color: #ecba33;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.logout {
+  background-color: #871810;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px;
+  border: none;
+  align-self: center;
+  margin-right: 10px;
+}
+
+.logout:hover {
+  background-color: #d7d7d7;
+  color: #000;
+}
+
+#current-datetime {
+  font-size: 14px;
+  align-self: center;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+table {
+  width: 96%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  margin: 10px auto;
+  border: none;
+  color: #000;
+}
+
+th {
+  font-size: 18px;
+  border-left: none;
+  border-right: none;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+tr {
+  text-align: center;
+}
+
+td {
+  border: 1px solid #000;
+  padding: 5px;
+  border: none;
+  border-bottom: #000 1px solid;
+}
+
+.addButton {
+  background-color: #16c47f;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  font-weight: bolder;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.taxButton {
+  background-color: #2c5596;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  font-weight: bolder;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.addButton:hover {
+  background-color: #d7d7d7;
+  color: #000;
+}
+
+.searchButton {
+  background-color: #2c5596;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  font-weight: bolder;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.clearButton {
+  background-color: #ba2a21;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  font-weight: bolder;
+  border-radius: 5px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.searchButton:hover {
+  background-color: #d7d7d7;
+}
+
+.editButton {
+  background-color: #008ce3;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  font-weight: bolder;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.editButton:hover {
+  background-color: #d7d7d7;
+}
+
+.deleteButton {
+  background-color: #ba2a21;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  font-weight: bolder;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.changePasswordButton {
+  background-color: #f9a91e;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  font-weight: bolder;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.deleteButton:hover {
+  background-color: #d7d7d7;
+}
+
+table td:nth-child(9) {
+  width: 5%;
+}
+
+table td:nth-child(10) {
+  width: 5%;
+}
+
+.titleText {
+  font-size: 24px;
+  font-weight: bolder;
+  padding: 20px;
+  margin: 0;
+  margin-bottom: 10px;
+  color: #000;
+  background-color: #edc37a;
+}
+
+label {
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: bolder;
+  color: #000;
+}
+
+input {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #000;
+}
+
+input[type="file"] {
+  margin-left: 20px;
+  font-size: 16px;
+  padding: 5px;
+}
+
+input[class="editPic"] {
+  margin-left: 10px;
+  margin-top: 0px;
+  font-size: 16px;
+  padding: 5px;
+}
+
+select {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+  color: #000;
+}
+
+input[type="submit"] {
+  background-color: #16c47f;
+  color: #000;
+  font-size: 16px;
+  border: none;
+  font-weight: bolder;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+button[id="updateButton"] {
+  background-color: #16c47f;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  font-weight: bolder;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 20px;
+}
+
+button[id="centerButton"] {
+  background-color: #16c47f;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  font-weight: bolder;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.centerButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+button[id="remove_image"] {
+  background-color: #ba2a21;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  font-weight: bolder;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.editContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 10px auto;
+}
+
+.editRightContainer {
+  margin-left: 100px;
+}
+
+.addTitleText {
+  font-size: 24px;
+  font-weight: bolder;
+  padding: 20px;
+  margin: 0;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.addBackContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 10px auto;
+}
+
+.addLeftContainer {
+  background-color: #edc37a;
+  border-radius: 10px;
+  width: 30%;
+  margin: 20px;
+}
+
+.addRightContainer {
+  width: 70%;
+  margin: 10px;
+}
+
+.addInput {
+  width: 90%;
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#register {
+  background-color: #16c47f;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  font-weight: bolder;
+  padding: 8px;
+  border-radius: 2px;
+  margin-right: 25px;
+}
+
+.updateContainer {
+  background-color: #edc37a;
+  width: fit-content;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.updateText {
+  text-align: center;
+}
+
+.productsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.product_box {
+  width: 22%;
+  height: 80px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #fff;
+  gap: 10px;
+}
+
+.product_box p {
+  margin: 0 auto;
+  font-size: 16px;
+  font-weight: bolder;
+  color: #000;
+  text-align: center;
+}
+
+.product_image {
+  border-radius: 10px;
+  min-width: 100px;
+  max-width: 100px;
+  min-height: 80px;
+  max-height: 80px;
+  background-color: #000;
+}
+
+.product_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cashierContainer {
+  width: 98%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+}
+
+.leftContainer {
+  width: 70%;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  overflow-y: auto;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.rightContainer {
+  width: 30%;
+  background-color: #fff;
+  margin-left: 10px;
+  border-radius: 10px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.menuText {
+  margin-left: 20px;
+  color: #000;
+  font-size: 20px;
+}
+
+.topTicketContainer {
+  background-color: #e8b018;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.itemName {
+  text-align: left;
+  color: #000;
+}
+
+.itemPrice {
+  text-align: right;
+  color: #000;
+}
+
+.ticketItems {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.ticketItem {
+  padding: 10px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.ticketItem p {
+  margin: 0;
+  font-size: 16px;
+}
+
+#ticketList {
+  max-height: 65vh;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.ticketWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.ticketItems {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  font-weight: bolder;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  align-items: center;
+}
+
+.bottomWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: sticky;
+  bottom: 1%;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 10px;
+}
+
+#saveTicketButton {
+  width: auto;
+  padding: 10px;
+  background-color: #2c5596;
+  color: #fff;
+  font-weight: bolder;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-right: auto;
+}
+
+#chargeButton {
+  width: auto;
+  padding: 10px;
+  background-color: #28a745;
+  color: #fff;
+  font-weight: bolder;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-left: auto;
+}
+
+#chargeButton:hover {
+  background-color: #218838;
+}
+
+.totalAmountText {
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 0;
+  color: #000;
+  margin-right: 10px;
+}
+
+.totalTaxText {
+  font-size: 16px;
+  margin: 5px;
+  color: #000;
+  margin-right: 10px;
+}
+
+.ticketItems button {
+  background-color: #0080ff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  margin-left: 5px;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.percentSymbol {
+  display: flex;
+  flex-direction: row;
+}
+
+.percentSymbolText {
+  font-size: 18px;
+  font-weight: bolder;
+  color: #000;
+}
+
+.inputTax {
+  margin-left: 20px;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5px;
+  min-width: 5%;
+  border: none;
+  background-color: #d7d7d7;
+  color: #000;
+}
+
+.taxContainer {
+  background-color: #f8aa00;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  flex: 1;
+}
+
+.totalContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modalContent {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  height: 40%;
+  border: solid 2px #000;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: #ccc 0px 0px 20px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#paymentAmount {
+  margin-top: 10px;
+  padding: 5px;
+  width: 70%;
+}
+
+.paymentWrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  align-items: center;
+}
+
+.leftLabelContainer {
+  width: 30%;
+  font-size: 40px;
+  padding: 10px;
+  margin: 0;
+  text-align: left;
+}
+
+.rightLabelContainer {
+  margin: 0;
+  margin-left: 20px;
+  flex: 1;
+  width: 100%;
+}
+
+.modalTotalText {
+  color: #000;
+  text-align: left;
+  font-size: 40px;
+  font-weight: bolder;
+  margin: 0;
+}
+
+.modalButtons {
+  background-color: #16c47f;
+  color: #fff;
+  font-size: 40px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bolder;
+  width: 45%;
+}
+
+.modalButtonsCancel {
+  background-color: #ba2a21;
+  color: #fff;
+  font-size: 40px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bolder;
+  width: 45%;
+}
+
+.modalButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+}
+
+#paymentMessage {
+  background-color: #28a745;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#paymentSuccessMessage {
+  margin: 0;
+  color: white;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.nextButton {
+  background-color: #2c5596;
+  color: #fff;
+  font-size: 30px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bolder;
+  width: 100%;
+  display: none;
+  margin-top: 20px;
+}
+
+.transactionContainer {
+  margin: 10px;
+}
+
+.orderBox {
+  background-color: #fff;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #000;
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+
+.transactionTopPart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.transactionBottomPart {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.transactionBottomRightPart {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.orderedItems {
+  background-color: #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.strukButton {
+  background-color: #2c5596;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bolder;
+  margin-bottom: 5px;
+}
+
+.strukEditButton {
+  background-color: #ccc;
+  color: #000;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bolder;
+  margin-bottom: 5px;
+}
+
+.strukDeleteButton {
+  background-color: #871810;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bolder;
+  margin-bottom: 5px;
+}
+
+.chartSection {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.chartContainer {
+  background-color: #fff;
+  margin: 5px;
+  width: 47%;
+  padding-top: 30px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.status-paid {
+  color: green;
+  font-weight: bold;
+}
+
+.status-pending {
+  color: red;
+  font-weight: bold;
+}
+
+.printReportContainer {
+  align-items: left;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #ccc;
+  margin: 10px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.printReportButton {
+  margin-left: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bolder;
+  background-color: #03ba71;
+  color: #fff;
+}
+
+.pendingChargeButton {
+  background-color: #218838;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bolder;
+  margin-bottom: 5px;
+}
