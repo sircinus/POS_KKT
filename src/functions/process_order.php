@@ -13,8 +13,9 @@ $status = $data['status'] ?? 'Paid'; // or "Pending"
 $tax = $data['tax'] ?? 0;
 $total = $data['total'] ?? 0;
 $items = $data['items'] ?? [];
+$ticket_name = $data['ticket_name'] ?? null; // New field
 
-// We’ll reset order_date to now on both create & update:
+// We'll reset order_date to now on both create & update:
 $order_date = date("Y-m-d H:i:s");
 
 if ($order_id_in) {
@@ -40,23 +41,25 @@ if ($order_id_in) {
     $del->execute();
     $del->close();
 
-    // 3) Update the order row
+    // 3) Update the order row (including ticket_name)
     $upd = $conn->prepare("
         UPDATE orders
            SET order_date   = ?,
                cashier      = ?,
                status       = ?,
                tax_amount   = ?,
-               total_amount = ?
+               total_amount = ?,
+               ticket_name  = ?
          WHERE order_id = ?
     ");
     $upd->bind_param(
-        "sssddi",
+        "sssddsi",
         $order_date,
         $cashier,
         $status,
         $tax,
         $total,
+        $ticket_name,
         $order_id_in
     );
     $upd->execute();
@@ -68,17 +71,18 @@ if ($order_id_in) {
     // === INSERT new order ===
     $ins = $conn->prepare("
         INSERT INTO orders
-            (order_date, cashier, status, tax_amount, total_amount)
+            (order_date, cashier, status, tax_amount, total_amount, ticket_name)
          VALUES
-            (?, ?, ?, ?, ?)
+            (?, ?, ?, ?, ?, ?)
     ");
     $ins->bind_param(
-        "sssdd",
+        "sssdds",
         $order_date,
         $cashier,
         $status,
         $tax,
-        $total
+        $total,
+        $ticket_name
     );
     $ins->execute();
     $order_id = $ins->insert_id;

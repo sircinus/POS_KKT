@@ -18,7 +18,7 @@ if (isset($_GET['order_id'])) {
         $pending_items = [];
         while ($item = $details_result->fetch_assoc()) {
             $pending_items[] = [
-                'product_name' => $item['product_name'], // Make sure this exists in DB
+                'product_name' => $item['product_name'],
                 'unit_price' => (float) $item['price'],
                 'quantity' => (int) $item['quantity']
             ];
@@ -87,6 +87,12 @@ $tax_percentage = ($tax_result->num_rows > 0) ? $tax_result->fetch_assoc()['perc
         <div class="rightContainer">
             <div class="topTicketContainer">
                 <p>Ticket</p>
+                <!-- Ticket Name Input -->
+                <div class="ticketNameContainer" style="margin-top: 10px;">
+                    <input type="text" id="ticketNameInput" placeholder="Nama Tiket (optional)"
+                        style="width: 80%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"
+                        value="<?php echo isset($pending_order['ticket_name']) ? htmlspecialchars($pending_order['ticket_name']) : ''; ?>">
+                </div>
             </div>
 
             <div class="ticketWrapper">
@@ -200,16 +206,22 @@ $tax_percentage = ($tax_result->num_rows > 0) ? $tax_result->fetch_assoc()['perc
             updateTotalAmount();
         }
 
+        function getTicketName() {
+            return document.getElementById("ticketNameInput").value.trim();
+        }
+
         function saveTicket() {
             if (!Object.keys(cart).length) return alert("Cart is empty.");
             const total = updateTotalAmount();
+            const ticketName = getTicketName();
             const orderData = {
                 total,
                 tax: total * (taxPercentage / 100),
                 cashier: '<?php echo $_SESSION["user_name"]; ?>',
                 items: cart,
                 status: "Pending",
-                order_id: orderId
+                order_id: orderId,
+                ticket_name: ticketName
             };
             fetch('../functions/process_order.php', {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -218,7 +230,9 @@ $tax_percentage = ($tax_result->num_rows > 0) ? $tax_result->fetch_assoc()['perc
                 .then(r => r.json()).then(d => {
                     if (d.success) {
                         alert("Ticket tersimpan.");
-                        cart = {}; document.getElementById("ticketList").innerHTML = "";
+                        cart = {};
+                        document.getElementById("ticketList").innerHTML = "";
+                        document.getElementById("ticketNameInput").value = "";
                         updateTotalAmount();
                     } else alert("Gagal menyimpan.");
                 });
@@ -231,14 +245,16 @@ $tax_percentage = ($tax_result->num_rows > 0) ? $tax_result->fetch_assoc()['perc
             const change = paid - grand;
             if (change < 0) return alert("Insufficient payment.");
             returnAmountText.innerText = `Rp ${change.toLocaleString('id-ID')}`;
+            const ticketName = getTicketName();
             const orderData = {
                 total: grand,
                 tax: grand - (grand / (1 + taxPercentage / 100)),
                 cashier: '<?php echo $_SESSION["user_name"]; ?>',
                 items: cart,
                 status: "Paid",
+                ticket_name: ticketName,
                 <?php if (isset($_GET['order_id'])): ?>
-            order_id: <?php echo (int) $_GET['order_id']; ?>,
+                                        order_id: <?php echo (int) $_GET['order_id']; ?>,
                 <?php endif; ?>
             };
 
@@ -275,7 +291,9 @@ $tax_percentage = ($tax_result->num_rows > 0) ? $tax_result->fetch_assoc()['perc
 
         function closeAndResetPaymentModal() {
             closePaymentModal();
-            cart = {}; document.getElementById("ticketList").innerHTML = "";
+            cart = {};
+            document.getElementById("ticketList").innerHTML = "";
+            document.getElementById("ticketNameInput").value = "";
             updateTotalAmount();
         }
 

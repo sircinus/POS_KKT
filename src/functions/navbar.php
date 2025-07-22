@@ -17,7 +17,7 @@ session_start();
                 <li><a href="../../src/screens/member.php">User</a></li>
             <?php } ?>
 
-            <?php if ($_SESSION['user_role'] == 'Cashier') { ?>
+            <?php if ($_SESSION['user_role'] == 'Cashier' || $_SESSION['user_role'] == 'Admin') { ?>
                 <li><a href="../../src/screens/cashier.php">Kasir</a></li>
             <?php } ?>
 

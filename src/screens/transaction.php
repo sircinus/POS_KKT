@@ -134,6 +134,7 @@ while ($r = $pm->fetch_assoc()) {
 
                         <div class="transactionTopPart">
                             <p><strong>No Transaksi: </strong><?php echo htmlspecialchars($order['order_id']); ?></p>
+                            <p><strong>Nama Tiket: </strong> <?php echo htmlspecialchars($order['ticket_name']); ?></p>
                             <p><strong>Date: </strong> <?php echo htmlspecialchars($order['order_date']); ?></p>
                             <p><strong>Cashier: </strong> <?php echo htmlspecialchars($order['cashier']); ?></p>
                         </div>
@@ -216,8 +217,8 @@ while ($r = $pm->fetch_assoc()) {
             var status = document.querySelector('#order-' + order_id + ' .transactionStatusPart p span').innerText;
 
             var orderID = document.querySelector('#order-' + order_id + ' .transactionTopPart p:nth-child(1)').innerText.split(': ')[1];
-            var orderDate = document.querySelector('#order-' + order_id + ' .transactionTopPart p:nth-child(2)').innerText.split(': ')[1];
-            var cashier = document.querySelector('#order-' + order_id + ' .transactionTopPart p:nth-child(3)').innerText.split(': ')[1];
+            var orderDate = document.querySelector('#order-' + order_id + ' .transactionTopPart p:nth-child(3)').innerText.split(': ')[1];
+            var cashier = document.querySelector('#order-' + order_id + ' .transactionTopPart p:nth-child(4)').innerText.split(': ')[1];
 
             // Collect order items
             var items = [];
